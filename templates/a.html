@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>VM Console</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/b.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>
+        <font color='red'>VM Configurations</font>
+
+    </h2>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#menu1">Start Node</a></li>
+        <li><a data-toggle="tab" href="#menu2">Restart Node</a></li>
+        <li><a data-toggle="tab" href="#menu3">Memory clear</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <div id="menu1" class="tab-pane fade">
+                <h3>Start Node</h3>
+                <form action="/start" method="post" id="submitform">
+                    <p>
+                        <button type="submit" class="btn btn-info" id="get-checked-data">Start</button>
+                    </p>
+            </div>
+            <div class="container">
+
+                <div class="list-group">
+                    {% for i in vm %}
+                        <input type="checkbox" name="check" value="{{ i }}" id="{{ i }}"/>
+                        <label class="list-group-item" for="{{ i }}">{{ i }}</label>
+                    {% endfor %}
+
+                </div>
+
+                <br/>
+
+            </div>
+        </form>
+
+        </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+        <h3>Menu 2</h3>
+        <p>
+            <button type="button" class="btn btn-info">Restart</button>
+        </p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+        <h3>Menu 3</h3>
+        <p>
+            <button type="button" class="btn btn-info">Clear</button>
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>
